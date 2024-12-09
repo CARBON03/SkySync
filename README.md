@@ -54,7 +54,9 @@ SkySync uses a free weather API to fetch weather data. Refer to the official doc
 
 ## 📸 Screenshots
 
+![alt text](https://github.com/CARBON03/SkySync/blob/main/Screenshots/Screenshot%201.png?raw=true)
 
+![alt text](https://github.com/CARBON03/SkySync/blob/main/Screenshots/Screenshot%202.png?raw=true)
 
 ## 🤝 Contributing
 

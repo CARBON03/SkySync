@@ -1,0 +1,123 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(
+        -45deg, 
+        #0f0f0f, 
+        #1e1e1e, 
+        #2a2a2a, 
+        #3d3d3d, 
+        #4a4a4a, 
+        #353535, 
+        #202020,
+        #6a6a6a,
+        #1c1c1c,
+        #4f4f4f
+    );
+    background-size: 400% 400%;
+    animation: gradientFlow 20s ease infinite;
+}
+
+@keyframes gradientFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.weatherBlock {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 15px;
+    padding: 30px;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    background-color: white;
+    color: black;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.weatherBlock h1 {
+    font-family: "Playwrite HU", cursive;
+    font-weight: 400;
+    margin-bottom: 20px;
+    color: #000000;
+}
+
+h2{
+    font-weight: 300;
+}
+
+#weatherForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#weatherForm label {
+    margin-bottom: 10px;
+}
+
+#weatherForm input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    color: black;
+}
+
+#weatherForm button {
+    padding: 10px 20px;
+    background-color: #000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#weatherForm button:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid #000;
+}
+
+#weatherResult {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#last_updated{
+    font-size: .7rem;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 600px) {
+    .weatherBlock {
+        width: 95%;
+        margin: 20px;
+        padding: 20px;
+    }
+
+    #weatherForm input,
+    #weatherForm button {
+        width: 100%;
+    }
+    #weatherForm button:hover {
+        background-color: black;
+        color: white;
+        border: none;
+    }
+}

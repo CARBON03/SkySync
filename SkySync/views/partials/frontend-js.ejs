@@ -1,0 +1,40 @@
+<script>
+document.getElementById('weatherForm').addEventListener('submit', async (e) => {
+    // Prevent the default form submission behavior (page reload)
+    e.preventDefault();
+
+    // get the input value and store in q
+    const q = document.getElementById('q').value;
+    const weatherResultDiv = document.getElementById('weatherResult');
+
+    try {
+        // Make a GET request to the `/weather` endpoint with q as parameter
+        const response = await fetch(`/weather?q=${q}`, {
+            method: 'GET'
+        });
+
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+
+        const data = await response.json();
+
+        if (data.error) {
+            weatherResultDiv.innerHTML = `Error: ${data.error}`;
+            return;
+        }
+
+        weatherResultDiv.innerHTML = `
+            <h2>Weather in ${data.location.name}, ${data.location.region}, ${data.location.country}</h2>
+            <p>Temperature: ${data.current.temp_c}°C</p>
+            <p>Wind: ${data.current.wind_kph} Km/h</p>
+            <p>Condition: ${data.current.condition.text}</p>
+            <img src="${data.current.condition.icon}" alt="Weather Icon">
+            <p id="last_updated">Last Updated: ${data.current.last_updated}</p>
+        `;
+    } catch (error) {
+        console.error('Error:', error);
+        weatherResultDiv.innerHTML = 'Failed to fetch weather data';
+    }
+});
+</script>

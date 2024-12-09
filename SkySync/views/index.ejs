@@ -1,0 +1,19 @@
+<%- include ("partials/header.ejs") %>
+
+<div class="weatherBlock">
+    <h1>SkySync</h1>
+<form id="weatherForm">
+    <label for="q">Enter The Desired Location:</label>
+    <input type="text" id="q" name="q" placeholder="Latitude, Longitude or Name of The City" required>
+    
+    <button type="submit">Get Weather</button>
+</form>
+
+<div id="weatherResult"></div>
+</div>
+
+
+
+
+<%- include ("partials/footer.ejs") %>
+<%- include ("partials/frontend-js.ejs") %>
